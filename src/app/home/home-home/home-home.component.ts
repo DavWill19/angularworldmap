@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   standalone: true,
   imports: [],
   templateUrl: './home-home.component.html',
-  styleUrl: './home-home.component.css'
+  styleUrl: './home-home.component.scss'
 })
 
 export class HomeHomeComponent implements OnInit {
@@ -35,6 +35,15 @@ export class HomeHomeComponent implements OnInit {
         this.toolTip = nameOfCountry !== null ? nameOfCountry : undefined;
 
       });
+
+      svgElement.addEventListener('mouseleave', (e) => {
+        const exit = e.target as HTMLElement;
+        const nameOfCountry = ""
+        // was going to use a tolltip but decided to a p tag instead
+        this.toolTip = nameOfCountry !== null ? nameOfCountry : undefined;
+
+      });
+
     });
   }
 
